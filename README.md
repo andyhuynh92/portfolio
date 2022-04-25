@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+## Welcome
 
-You can use the [editor on GitHub](https://github.com/andyhuynh92/Ubiquant-Comp/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is my website
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Ubiquant 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is a project on Kaggle collaborating with [Professor Lei Yu](https://alcoholstudies.rutgers.edu/people/faculty/lei-yu/) and members of his laboratory. 
 
-```markdown
-Syntax highlighted code block
+[Ubiquant](https://www.kaggle.com/competitions/ubiquant-market-prediction)
 
-# Header 1
-## Header 2
-### Header 3
+The goal is to use the given data to predict the target. How they measure how submitted models perform is to find the mean of Pearson correlation between our predictions to the true values at each `time_id`. 
 
-- Bulleted
-- List
+The data given is completely anonymized. All 300 features are anonymized. Both time of the investment and the stock are anonymized. The target is anonymized. 
 
-1. Numbered
-2. List
+From public forums, people have reverse engineered both `time_id` and `investment_id`. Using this data, I then grabbed the stock data using the Yahoo! finance API and ran correlations between the stock price and the features. We discovered that the features and target are both detrended and normalized heavily at each `time_id`, making it difficult to reverse engineer the existing features and feature engineer new ones.
 
-**Bold** and _Italic_ and `Code` text
+We submitted two models. The first model used LightGBM. The second model is an ensemble with LightGBM and a deep neural network.
 
-[Link](url) and ![Image](src)
-```
+### JPX Kaggle Competition(Currently ongoing)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Continuing from the Ubiquant Kaggle competition(below), we followed up doing another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction). The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
 
-### Jekyll Themes
+The given data is directly from the Tokyo stock market. 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/andyhuynh92/portfolio/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+### Root Insurnace project
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Root Insurance – Bidding Strategy
+Goal: Modelling bids for ad placement, a project with the Erdos Institute
+Processed the data, featuring mostly categorical data using one-hot encoding
+Modelled expected cost from given data, assuming certain probability distributions
+Minimized the cost function constrained to 400 sales using gradient descent with a barrier function
+Developed a strategy that saves up to 70% in costs depending on the desired number of expected sales
