@@ -16,9 +16,9 @@ The goal is to use the given data containing a `time_id`, `investment_id`, and 3
 ### Data Description: 
 
 The data given is completely anonymized. That means
-	* All 300 features are anonymized. 
-	* Both time of the investment and the stock are anonymized. 
-	* The target is anonymized. 
+- All 300 features are anonymized. 
+- Both time of the investment and the stock are anonymized. 
+- The target is anonymized. 
 In addition, I found out that the data has been additionally processed. In particular, fixing a value for a `time_id`, I found out that most of the time(but not all), the feature will have mean 0 and standard deviation 1.
 
 From public forums, people were able to reverse engineer both `time_id` and `investment_id`, figuring out the real time correspondence for `time_id`, and the likely stock tickers corresponding to each `investment_id`. Using this data, I grabbed the stock data using the Yahoo! finance API and ran correlations between the stock price and the features. We discovered that the features and target are both detrended and normalized at each `time_id`, i.e., the features and target have mean 0 and standard deviation 1, making it difficult to reverse engineer the existing features and feature engineer new ones.
