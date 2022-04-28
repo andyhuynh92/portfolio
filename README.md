@@ -20,7 +20,7 @@ The data given is completely anonymized. That means
 In addition, we found out that the data has been additionally processed. In particular, fixing a value for a `time_id`, we found out that most of the time(but not all), the feature will have approximately mean 0 and standard deviation 1.
 
 <p align="center">
-	![](img/meanstd.png)
+	<img src="img/meanstd.png">
 </p>
 
 ### Analysis:
