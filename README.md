@@ -1,17 +1,15 @@
 ## Welcome
 
-I am Andy Huynh. I am currently a Ph.D. student at Rutgers University interested in low dimensional topology. In my spare time, you might see me building Legos or tinkering or fixing some electronics. Here are some projects I worked on in the past.
+My name is Andy Huynh. I am currently a Ph.D. student at Rutgers University interested in low dimensional topology. In my spare time, you might see me building Legos, tinkering with some electronics, or rock climbing. Here are some projects I worked on in the past.
 
 
 ## [Ubiquant Market Prediction](https://github.com/andyhuynh92/Ubiquant-Comp)
 
-This is a project on Kaggle collaborating with [Professor Lei Yu](https://alcoholstudies.rutgers.edu/people/faculty/lei-yu/) and members of his laboratory. 
-
-[Ubiquant](https://www.kaggle.com/competitions/ubiquant-market-prediction)
+Collaborating with [Professor Lei Yu](https://alcoholstudies.rutgers.edu/people/faculty/lei-yu/) and members of his laboratory, we participated in a [Kaggle competition hosted by Ubiquant](https://www.kaggle.com/competitions/ubiquant-market-prediction), a hedge fund located in China. 
 
 ### Goal: 
 
-The goal is to use the given data containing a `time_id`, `investment_id`, and 300 features to predict `target`. How they measure how submitted models perform is to find the mean of Pearson correlation between our predictions to the true values at each `time_id`. 
+The goal is to use the given data containing a `time_id`, `investment_id`, and 300 features to predict `target`. We know that the `target` is based off of a stock's rate of return, i.e., daily percent change. How they measure how submitted models perform is to find the mean of Pearson correlation between our predictions to the true values at each `time_id`. 
 
 ### Data Description: 
 
@@ -19,11 +17,13 @@ The data given is completely anonymized. That means
 - All 300 features are anonymized. 
 - Both time of the investment and the stock are anonymized. 
 - The target is anonymized. 
-In addition, I found out that the data has been additionally processed. In particular, fixing a value for a `time_id`, I found out that most of the time(but not all), the feature will have mean 0 and standard deviation 1.
+In addition, we found out that the data has been additionally processed. In particular, fixing a value for a `time_id`, we found out that most of the time(but not all), the feature will have mean 0 and standard deviation 1.
 
-From public forums, people were able to reverse engineer both `time_id` and `investment_id`, figuring out the real time correspondence for `time_id`, and the likely stock tickers corresponding to each `investment_id`. Using this data, I grabbed the stock data using the Yahoo! finance API and ran correlations between the stock price and the features. We discovered that the features and target are both detrended and normalized at each `time_id`, i.e., the features and target have mean 0 and standard deviation 1, making it difficult to reverse engineer the existing features and feature engineer new ones.
+### Analysis:
 
-We submitted two models. The first model used LightGBM. The second model is an ensemble with LightGBM and a deep neural network.
+From the public discussion boards, people were able to reverse engineer both `time_id` and `investment_id`, figuring out the real time correspondence for `time_id`, and the likely stock tickers corresponding to each `investment_id`. Using this data, we grabbed the stock data using the Yahoo! finance API and ran correlations between the stock price and the features. We discovered that the features and target are both detrended and normalized at each `time_id`, i.e., the features and target have mean 0 and standard deviation 1, making it difficult to reverse engineer the existing features and feature engineer new ones.
+
+The competition allows us to submit two models. Our first model used LightGBM. Our second model is an ensemble of LightGBM with a deep neural network.
 
 ## JPX Kaggle Competition(Currently ongoing)
 
@@ -34,11 +34,22 @@ The given data is directly from the Tokyo stock market.
 
 ## [Root Insurance project](https://github.com/gedwards09/Root-it)
 
-THis is a projet done with the Erdos Institute. 
+This is a group project done during the Erdos Institute bootcamp in 2021, with 4 other team members.
 
-Root Insurance – Bidding Strategy
-Goal: Modelling bids for ad placement, a project with the Erdos Institute
-Processed the data, featuring mostly categorical data using one-hot encoding
-Modelled expected cost from given data, assuming certain probability distributions
-Minimized the cost function constrained to 400 sales using gradient descent with a barrier function
-Developed a strategy that saves up to 70% in costs depending on the desired number of expected sales
+### Goal:
+
+The data contains information of customers who were presented advertisements from five insurance agencies, including the client, Root Insurance. Each insurance company "bids" for the placement of their advertisement for each customer, and the ads are shown to the customer in order from highest to lowest bidder. The customer can then choose to click any ad shown and can purchase a policy from any ad they click. The client has been using a flat \$10 bid strategy for all customers and wants to use the data collected to optimize the efficiency of customer acquisition in future. Our goal is to introduce a bidding strategy that produces the most customers per dollar, with the additional constraint of guaranteeing at least 400 customers per 10,000.
+
+### Data:
+
+Root Insurance provided information on 10,000 customers including their information: current insurance status (insured, uninsured, or unknown), marital status (married, single), number of drivers (one, two, or three+), and number of vehicles (one or two+); whether the customer clicked the client's as; and whether the customer ultimately purchased a policy from the client. Root Insurance used a flat \$10 bid for all of these customers, which determined the placement of the ad.
+
+### Analysis:
+
+We wanted to compute both expected sales and expected cost with our bids, which required us to model a price of bid to probability of sale using a probability distribution. We experimented with both a uniform distribution and an exponential distribution, eventually deciding to assume our bids follow a uniform distribution with exponential tails. This assumption allows us to model an expected cost function and expected number of policies sold. We also require(from the client) a constraint that requires the expected number of policies sold to be at least 400. 
+
+We attempted to optimize expected cost constrained to the expected number of policies sold using two methods:
+- Using the SciPy package for constrained minimization,
+- Performing gradient descent with a barrier function.
+
+Analyzing the minimization, we have found out what traits are highly desired by other companies, and we bid contrary to the competitors, seeking out less desired candidates. This means that we bid higher when our competition bids low, and vice versa. 
