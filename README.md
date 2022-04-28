@@ -5,7 +5,6 @@
 
 .flex-container > div {
   margin: 10px;
-  padding: 20px;
 }
 </style>
 
