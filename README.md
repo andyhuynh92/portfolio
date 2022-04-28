@@ -25,9 +25,9 @@ From the public discussion boards, people were able to reverse engineer both `ti
 
 The competition allows us to submit two models. Our first model used LightGBM. Our second model is an ensemble of LightGBM with a deep neural network.
 
-## JPX Kaggle Competition(Currently ongoing)
+## JPX Kaggle Competition(Currently ongoing and WIP)
 
-Continuing from the Ubiquant Kaggle competition above, we followed up doing another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
+Continuing from the Ubiquant Kaggle competition above, we followed up and continued to work on another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
 
 The given data is directly from the Tokyo stock market. 
 
@@ -47,6 +47,8 @@ Root Insurance provided information on 10,000 customers including their informat
 ### Analysis:
 
 We wanted to compute both expected sales and expected cost with our bids, which required us to model a price of bid to probability of sale using a probability distribution. We experimented with both a uniform distribution and an exponential distribution, eventually deciding to assume our bids follow a uniform distribution with exponential tails. This assumption allows us to model an expected cost function and expected number of policies sold. We also require(from the client) a constraint that requires the expected number of policies sold to be at least 400. 
+
+![](img/hybriddistribution.png)
 
 We attempted to optimize expected cost constrained to the expected number of policies sold using two methods:
 - Using the SciPy package for constrained minimization,
