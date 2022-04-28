@@ -2,9 +2,6 @@
 .flex-container {
   display: flex;
 }
-
-.flex-container > div {
-}
 </style>
 
 ## Welcome
