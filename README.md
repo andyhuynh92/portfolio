@@ -1,8 +1,9 @@
 ## Welcome
 
+<img src="img/profile.jpg" style="float: left" width="250" height="350">
+
 My name is Andy Huynh. I am currently a Ph.D. student at Rutgers University interested in low dimensional topology. In my spare time, you might see me [building Legos](img/IMG_20210930_201750.jpg), tinkering with some electronics, or rock climbing. Here are some projects I worked on in the past.
 
-<img src="img/profile.jpg" style="float: left">
 
 ## Project 1: [Ubiquant Market Prediction](https://github.com/andyhuynh92/Ubiquant-Comp)
 
