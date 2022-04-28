@@ -3,11 +3,10 @@
   display: flex;
 }
 </style>
-
-## Welcome
-
 <div class="flex-container">
-	<div>My name is Andy Huynh. I am currently a Ph.D. student at Rutgers University interested in low dimensional topology. In my spare time, you might see me <a href="img/IMG_20210930_201750.jpg">building Legos</a>, tinkering with some electronics, or rock climbing. Here are some projects I worked on in the past.
+	<div><h2>Welcome</h2>
+		
+		<p>My name is Andy Huynh. I am currently a Ph.D. student at Rutgers University interested in low dimensional topology. In my spare time, you might see me <a href="img/IMG_20210930_201750.jpg">building Legos</a>, tinkering with some electronics, or rock climbing. Here are some projects I worked on in the past.</p>
 	</div>
 	
 	<div><img src="img/profile.jpg" width="250" height="350" style="padding-left=30px">
