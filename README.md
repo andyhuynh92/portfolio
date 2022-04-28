@@ -40,15 +40,12 @@ From the public discussion boards, people were able to reverse engineer both `ti
 
 The competition allows us to submit two models. Our first model used LightGBM. Our second model is an ensemble of LightGBM with a deep neural network.
 
-## Project 2: JPX Kaggle Competition(Currently ongoing and WIP)
+### Follow up, JPX Kaggle Competition(Currently ongoing and WIP)
 
-Continuing from the Ubiquant Kaggle competition above, we followed up and continued to work on another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
-
-### Data:
-The given data is directly from the Tokyo stock market. 
+Continuing from the Ubiquant Kaggle competition above, we decided to work on another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
 
 
-## Project 3: [Root Insurance project](https://github.com/gedwards09/Root-it)
+## Project 2: [Root Insurance project](https://github.com/gedwards09/Root-it)
 
 This is a group project done during the Erdos Institute bootcamp in 2021, with 4 other team members.
 
