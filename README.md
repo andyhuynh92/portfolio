@@ -4,7 +4,6 @@
 }
 
 .flex-container > div {
-  margin: 10px;
 }
 </style>
 
