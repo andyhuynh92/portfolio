@@ -44,8 +44,36 @@ The competition allows us to submit two models. Our first model used LightGBM. O
 
 Continuing from the Ubiquant Kaggle competition above, we decided to work on another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
 
+## Project 2: [CoverMyMeds project](https://github.com/andyhuynh92/CMM-Team-Ranger)
 
-## Project 2: [Root Insurance project](https://github.com/gedwards09/Root-it)
+This is a group project done during the Erdos Institute bootcamp in 2022, with 3 other team members.
+
+### Goal:
+
+Use the provided data for 3 goals:
+1. Predict the copay of a prescribed medication 
+2. Find out the formulary status of a drug(i.e., the preference of the drug as considered by insurance)
+3. Provide substitutions in the case when copay is expensive or even rejected by insurance
+
+### Data:
+
+The data is simulated drug data(for legality reasons), with features containing date, pharmacy, diagnosis, drug, and three indicators of insurance. The data is also anonymized, as the diagnosis, drug, and insurance information do not correspond to real life objects. From here, we are also provided if insurance covered the drug, and if they did, how much the patient copay is.
+
+### Analysis:
+
+Initial analysis showed that insurance is 30\% more likely to reject covering a drug if the drug is a brand-name drug instead of a generic drug. From there, we know that the copay is most influenced by the drug itself and the insurance that the patient has. For drug with the most expensive copay, we found that most patients are either paying $15 or $500. Two of the three indicators of insrunace are able to separate these low paying patients from high paying patients, controlling all other factors. 
+
+Since most of the features are categorical, we have decided to use CatBoost as our model. We also considered using random forests, but it was too slow for our purposes. Our model used two steps. We first predicted whether or not a drug will be accepted by insurance. From there, we predict the copay of the drug if it is covered by insurance. Looking at the feature importances given by CatBoost after fitting the models, we see that the important features are exactly what we found earlier, showing that this model is heading towards the right direction.
+
+![](img/catboostfeatureimportances.png)
+
+Additionally, we also sought to find out the formulary status of a drug. We used the conditions:
+- cheapest 
+- lowest rejection
+- and most prescribed drug,
+controlling for other factors. We found drugs that best satisfies these conditions and worst satisfied these condtions, interpolating every other possibility inbetween. This created a list of substition drugs that we can recommend. On average, this saves $20.50 by choosing the best(accoring to the conditions above) drug over a randomly chosen drug. The greatest savings we found was $241.55.
+
+## Project 3: [Root Insurance project](https://github.com/gedwards09/Root-it)
 
 This is a group project done during the Erdos Institute bootcamp in 2021, with 4 other team members.
 
