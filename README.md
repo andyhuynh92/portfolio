@@ -65,7 +65,9 @@ Initial analysis showed that insurance is 30\% more likely to reject covering a 
 
 Since most of the features are categorical, we have decided to use CatBoost as our model. We also considered using random forests, but it was too slow for our purposes. Our model used two steps. We first predicted whether or not a drug will be accepted by insurance. From there, we predict the copay of the drug if it is covered by insurance. Looking at the feature importances given by CatBoost after fitting the models, we see that the important features are exactly what we found earlier, showing that this model is heading towards the right direction.
 
-![](img/catboostfeatureimportance.png)
+<p align="center">
+	<img src="img/catboostfeatureimportance.png">
+</p>
 
 Additionally, we also sought to find out the formulary status of a drug. We used the conditions:
 - cheapest 
