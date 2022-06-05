@@ -91,7 +91,9 @@ Root Insurance provided information on 10,000 customers including their informat
 
 We wanted to compute both expected sales and expected cost with our bids, which required us to model a price of bid to probability of sale using a probability distribution. We experimented with both a uniform distribution and an exponential distribution, eventually deciding to assume our bids follow a uniform distribution with exponential tails. This assumption allows us to model an expected cost function and expected number of policies sold. We also require(from the client) a constraint that requires the expected number of policies sold to be at least 400. 
 
-![](img/hybriddistribution.png)
+<p align="center">
+	<img src="img/hybriddistribution.png">
+</p>
 
 We attempted to optimize expected cost constrained to the expected number of policies sold using two methods:
 - Using the SciPy package for constrained minimization,
