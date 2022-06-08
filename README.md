@@ -73,6 +73,7 @@ Additionally, we also sought to find out the formulary status of a drug. We used
 - cheapest 
 - lowest rejection
 - and most prescribed drug,
+
 controlling for other factors. We found drugs that best satisfies these conditions and worst satisfied these condtions, interpolating every other possibility inbetween. This created a list of substition drugs that we can recommend. On average, this saves $20.50 by choosing the best(accoring to the conditions above) drug over a randomly chosen drug. The greatest savings we found was $241.55.
 
 ## Project 3: [Root Insurance project](https://github.com/gedwards09/Root-it)
