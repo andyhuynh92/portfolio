@@ -13,8 +13,37 @@
 	</div>
 </div> 
 
+## [Cryptocurrency Analysis and Forecasting](https://github.com/andyhuynh92/Crypto-Analysis)
 
-## Project 1: [Ubiquant Market Prediction](https://github.com/andyhuynh92/Ubiquant-Comp)
+I analyzed cryptocurrencies and used time series forecasting to predict.
+
+### Goal: 
+
+If we were to break up the price of Bitcoin between the halving dates, we follow a pattern. Some people believe that Bitcoin follows a cyclic pattern based on the halving dates. While I do not completely believe that the halving entirely determines the cycle, I do believe that the halving contributes to a pattern. 
+
+
+### Work:
+
+I wanted to recreate charts from [this website.](https://www.lookintobitcoin.com/) I particularly wanted to recreate the [fear and greed chart.](https://www.lookintobitcoin.com/charts/bitcoin-fear-and-greed-index/)
+
+### [Topological Data Analysis:](https://github.com/andyhuynh92/Crypto-TDA)
+
+I was attending meetings during an REU which used topological data analysis and persistent homology. I wondered if this can be applied to time series data. I found [this article](https://arxiv.org/abs/1703.04385) and it provides a method to apply TDA to stocks. Splitting the price of Bitcoin on the halving dates, I have an embedding of the prices into 3-dimensional space, which is enough to apply persistent homology. Setting a window size and computing the persistence norm, I notice that there is a peak of the norms occuring around 400 days after halving. The peak of Bitcoin happens usually around 500 days after halving.
+
+### Forecasting:
+
+I applied ARIMA and ETS forecasting methods. I also attempted LTSM, which is a recurrent neural network.
+
+## Files
+
+The 3-cycles file splits the prices of `BTC` along the halving dates. Since there are 3 halvings so far, this creates 4 periods of the prices. I ignore the period before the first halving and use the last three periods, including the current period. Then I use a 50 day rolling window to compute persistence norms. I found that the norm peaks at around 400 days after halving.
+
+The 2-cycles file splits the prices of `BTC` along the halving dates and chooses only two of the three periods that I chose above. The norms also peak at around 400 days after halving. 
+
+The 2-cycles extended file uses extended periods between two halvings instead of 1 halving. This means I use the period between the first and third halving as one time series, and I use the period between the second halving and fourth halving(we are still in this period to the current day) as another time series. 
+
+
+## [Ubiquant Market Prediction](https://github.com/andyhuynh92/Ubiquant-Comp)
 
 Collaborating with [Professor Lei Yu](https://alcoholstudies.rutgers.edu/people/faculty/lei-yu/) and members of his laboratory, we participated in a [Kaggle competition hosted by Ubiquant](https://www.kaggle.com/competitions/ubiquant-market-prediction), a hedge fund located in China. 
 
@@ -40,11 +69,7 @@ From the public discussion boards, people were able to reverse engineer both `ti
 
 The competition allows us to submit two models. Our first model used LightGBM. Our second model is an ensemble of LightGBM with a deep neural network.
 
-### Follow up, JPX Kaggle Competition(Currently ongoing and WIP)
-
-Continuing from the Ubiquant Kaggle competition above, we decided to work on another [Kaggle competition hosted by JPX](https://www.kaggle.com/competitions/jpx-tokyo-stock-exchange-prediction), the parent company of the Tokyo stock exchange. The goal of this competition is to rank the stocks in the Tokyo stock market and get the highest competition metric, based on the [Sharpe ratio.](https://en.wikipedia.org/wiki/Sharpe_ratio)
-
-## Project 2: [CoverMyMeds project](https://github.com/andyhuynh92/CMM-Team-Ranger)
+## [CoverMyMeds project](https://github.com/andyhuynh92/CMM-Team-Ranger)
 
 This is a group project done during the Erdos Institute bootcamp in 2022, with 3 other team members.
 
@@ -76,7 +101,7 @@ Additionally, we also sought to find out the formulary status of a drug. We used
 
 We found drugs that best satisfies these conditions and worst satisfied these conditions, interpolating every other possibility inbetween. This created a list of substitution drugs that we can recommend. On average, this saves $20.50 by choosing the best(accoring to the conditions above) drug over a randomly chosen drug. The greatest savings we found was $241.55.
 
-## Project 3: [Root Insurance project](https://github.com/gedwards09/Root-it)
+## [Root Insurance project](https://github.com/gedwards09/Root-it)
 
 This is a group project done during the Erdos Institute bootcamp in 2021, with 4 other team members.
 
