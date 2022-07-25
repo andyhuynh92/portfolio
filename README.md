@@ -34,15 +34,6 @@ I was attending meetings during an REU which used topological data analysis and 
 
 I applied ARIMA and ETS forecasting methods. I also attempted LTSM, which is a recurrent neural network.
 
-## Files
-
-The 3-cycles file splits the prices of `BTC` along the halving dates. Since there are 3 halvings so far, this creates 4 periods of the prices. I ignore the period before the first halving and use the last three periods, including the current period. Then I use a 50 day rolling window to compute persistence norms. I found that the norm peaks at around 400 days after halving.
-
-The 2-cycles file splits the prices of `BTC` along the halving dates and chooses only two of the three periods that I chose above. The norms also peak at around 400 days after halving. 
-
-The 2-cycles extended file uses extended periods between two halvings instead of 1 halving. This means I use the period between the first and third halving as one time series, and I use the period between the second halving and fourth halving(we are still in this period to the current day) as another time series. 
-
-
 ## [Ubiquant Market Prediction](https://github.com/andyhuynh92/Ubiquant-Comp)
 
 Collaborating with [Professor Lei Yu](https://alcoholstudies.rutgers.edu/people/faculty/lei-yu/) and members of his laboratory, we participated in a [Kaggle competition hosted by Ubiquant](https://www.kaggle.com/competitions/ubiquant-market-prediction), a hedge fund located in China. 
